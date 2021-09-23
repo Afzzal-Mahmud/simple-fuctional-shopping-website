@@ -1,0 +1,17 @@
+.product-container{
+    display: flex;
+    align-items: center;
+}
+.product-img{
+    margin-right: 2rem;
+}
+.cart-btn{
+    padding: 1rem 1.25rem;
+    background-color: goldenrod;
+    border: 1px solid gold;
+    display: block;
+    font-weight: bold;
+    color: whitesmoke;
+    margin-top: 1em;
+    cursor: pointer;
+}

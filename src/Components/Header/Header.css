@@ -12,9 +12,8 @@ nav ul{
 }
 nav ul li a{
     text-decoration: none;
-    color: rgb(202, 233, 233);
+    color: rgb(16, 60, 60);
     padding: .7rem .9rem;
-    background-color: rgb(33, 144, 139);
     margin: 0 1em;
     font-weight: bold;
 }
