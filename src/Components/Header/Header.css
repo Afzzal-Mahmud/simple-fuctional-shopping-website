@@ -1,0 +1,24 @@
+.header-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+}
+.logo{
+    width: 150px;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(202, 233, 233);
+    padding: .7rem .9rem;
+    background-color: rgb(33, 144, 139);
+    margin: 0 1em;
+    font-weight: bold;
+}
+.flex{
+    display: flex;
+    justify-content: space-around;
+}
