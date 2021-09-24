@@ -19,7 +19,12 @@ function Hero() {
     useEffect(()=>{
         fetch('../../../products.JSON')
         .then(Response => Response.json())
-        .then(data => setProducts(data))
+        .then(data => {
+            setProducts(data);
+            //first of all the search result is empty thats why the 
+            //length is 81 ; it is the 
+            setMatchedResult(data)
+        })
     },[])
 
     useEffect(()=>{
@@ -41,17 +46,25 @@ function Hero() {
         }
         
     },[products])
-
+//hendelChange useState 
+    const[matchedResult,setMatchedResult]= useState([])
+    const hendelInputChange = (e)=>{
+        const searchProduct = e.target.value;
+        const matchedProduct = products.filter(product => 
+            product.name.toLowerCase().includes(searchProduct.toLowerCase()))
+            console.log('from line 55 default array length is 81 thats why it show the all result',matchedProduct.length)
+        setMatchedResult(matchedProduct)
+    }
 
     return( 
        <>
        <div className="input-container">
-           <input type="text" placeholder="enter your product name"/>
+           <input onChange={hendelInputChange} type="text" placeholder="enter your product name"/>
        </div>
         <div className="container grid">
             <div className="products-container">
                 {
-                    products.map(product => <Product 
+                   matchedResult.map(product => <Product 
                                  productsObject={product}
                                  addToCart={addToCartHendler}
                                  key={product.key}
