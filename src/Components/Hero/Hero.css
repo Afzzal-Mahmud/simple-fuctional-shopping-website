@@ -1,3 +1,10 @@
+.input-container{
+    text-align: center;
+    background-color: #ffdca7;
+}
+.input-container input{
+    padding: 1em 25%;
+}
 .grid{
     display: grid;
     grid-template-columns: 5fr 1fr;

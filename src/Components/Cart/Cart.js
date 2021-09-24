@@ -1,13 +1,19 @@
 import React from "react";
 function Cart(props) {
     const {carts}= props;
+    console.log(carts)
+    let totalQuantity = 0
     let total = 0;
     for(const productObject of carts){
-        total = total + productObject.price;
+        if(!productObject.quantity){
+            productObject.quantity = 1
+        }
+        total = total + productObject.price * productObject.quantity;
+        totalQuantity = totalQuantity + productObject.quantity
     }
     return(
         <>
-            <h4>Total Product :{props.carts.length} </h4>
+            <h4>Total Product :{totalQuantity} </h4>
             <h3>Total Price : {total.toFixed(2)}</h3>
         </>
     )           
