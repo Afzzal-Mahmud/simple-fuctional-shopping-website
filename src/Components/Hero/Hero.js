@@ -25,7 +25,7 @@ function Hero() {
             newCart = [...cart,productObject];
         }
         setCart(newCart)
-        
+
         //save to local storage
         storeDataToLocalStorage(productObject.key)
     }
