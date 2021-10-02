@@ -1,7 +1,7 @@
 import React from "react";
 import "./Product.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart ,faStar} from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import StarRatingComponent from "react-star-rating-component";
 function Product(props) {
     const {name,img,category,price,stock,seller,star} = props.productsObject;

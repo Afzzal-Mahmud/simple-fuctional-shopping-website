@@ -21,4 +21,11 @@ function getDataFromStorage() {
     const existStorage = localStorage.getItem('shopping-cart');
     return existStorage ? JSON.parse(existStorage) : {} ;
 }
-export {storeData,getDataFromStorage};
+
+//remove from localstorage
+function removeFromDb(key) {
+    const existCart = JSON.parse(localStorage.getItem("shopping-cart"));
+    delete existCart[key];
+    localStorage.setItem('shopping-cart',JSON.stringify(existCart))
+}
+export {storeData,getDataFromStorage,removeFromDb};

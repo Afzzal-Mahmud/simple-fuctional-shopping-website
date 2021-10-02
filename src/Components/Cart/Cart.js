@@ -1,7 +1,6 @@
 import React from "react";
 function Cart(props) {
     const {carts}= props;
-    console.log(carts)
     let totalQuantity = 0
     let total = 0;
     for(const productObject of carts){
