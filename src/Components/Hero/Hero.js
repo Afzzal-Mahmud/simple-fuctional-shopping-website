@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { getDataFromStorage, storeData as storeDataToLocalStorage } from "../../Data/localStorage";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
@@ -52,7 +53,7 @@ function Hero() {
         const searchProduct = e.target.value;
         const matchedProduct = products.filter(product => 
             product.name.toLowerCase().includes(searchProduct.toLowerCase()))
-            console.log('from line 55 default array length is 81 thats why it show the all result',matchedProduct.length)
+            // console.log('from line 55 default array length is 81 thats why it show the all result',matchedProduct.length)
         setMatchedResult(matchedProduct)
     }
 
@@ -72,7 +73,11 @@ function Hero() {
                 }
             </div>
             <div className="cart-item">
-                <Cart carts={cart}></Cart>
+                <Cart carts={cart}>
+                    <NavLink style={{textDecoration:"none"}} to="./review">
+                        <button style={{marginLeft:"67px"}} className="cart-btn">Review Order</button>
+                    </NavLink>
+                </Cart>
             </div>
         </div>
        </>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router";
 import { removeFromDb } from "../../Data/localStorage";
 import getProduct from "../../Js/loadData";
 import useCart from "../../Js/useCart";
@@ -8,12 +9,20 @@ import ReviewProduct from "./ReviewProduct";
 function Review() {
     const [products] = getProduct()
     const [cart,setCart] = useCart(products)
-
+    const history = useHistory()
     //btn for remove to cart 
     const removeItem = (key)=>{
         const newCart = cart.filter(product => product.key !==key);
         setCart(newCart)
         removeFromDb(key)
+    }
+
+    const placeOrder = ()=>{
+        //using setCart hook we remove the shopping data from ui
+        //also remove from local storage and go to ThumbsUp components
+        setCart([])
+        localStorage.removeItem('shopping-cart');
+        history.push("/thumbsup")
     }
 
     return (
@@ -29,7 +38,12 @@ function Review() {
          }
         </div>
         <div className="cart-item">
-            <Cart carts={cart}></Cart>
+            <Cart carts={cart}>
+                <button 
+                style={{marginLeft:"70px"}} 
+                className="cart-btn"
+                onClick={placeOrder}>Place Order</button>
+            </Cart>
         </div>
     </div>
     )

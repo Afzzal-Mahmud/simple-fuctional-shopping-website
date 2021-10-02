@@ -14,6 +14,7 @@ function Cart(props) {
         <>
             <h4>Total Product :{totalQuantity} </h4>
             <h3>Total Price : {total.toFixed(2)}</h3>
+            {props.children}
         </>
     )           
 }
