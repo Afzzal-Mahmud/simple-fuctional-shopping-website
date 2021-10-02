@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { getDataFromStorage, storeData as storeDataToLocalStorage } from "../../Data/localStorage";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
@@ -10,7 +10,9 @@ import "./Hero.css";
 function Hero() {
     const [products,setProducts] = useState([]);
     const [cart,setCart] = useState([])
-
+    //product already localStorage a thakar karone product ke find kore tar ager quantity er 
+    //sate amra 1 jug kore disi abong oita bade baki je product ase oigular kuno poriborton 
+    //hove na ar notun product add korle tar quantity amra 1 set kore dibo
     const addToCartHendler = (productObject)=>{
 
         const exist = cart.find(product => product.key ===productObject.key);
