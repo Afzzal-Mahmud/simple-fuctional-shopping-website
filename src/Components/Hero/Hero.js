@@ -12,8 +12,21 @@ function Hero() {
     const [cart,setCart] = useState([])
 
     const addToCartHendler = (productObject)=>{
-        const newCart = [...cart,productObject];
+
+        const exist = cart.find(product => product.key ===productObject.key);
+        let newCart =[];
+
+        if(exist){
+            const restProduct = cart.filter(product=>product.key !== productObject.key);
+            exist.quantity = exist.quantity + 1;
+            newCart = [...restProduct,productObject]
+        }else{
+            productObject.quantity = 1;
+            newCart = [...cart,productObject];
+        }
         setCart(newCart)
+        
+        //save to local storage
         storeDataToLocalStorage(productObject.key)
     }
 
