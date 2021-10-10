@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 function Register() {
     return(
         <div style={{textAlign:'center'}}>
+            <h2>Register or Google SignIn</h2>
              <form>
                     <label htmlFor="name">Name</label>
                     <input type="text" /><br />

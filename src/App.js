@@ -6,10 +6,12 @@ import Review from './Components/Review/Review';
 import ThumbsUp from "../src/Components/Thumbsup/ThumbsUp"
 import LogIn from './LogIn/LogIn';
 import Register from './Components/Register/Register';
+import AuthProvider from './Context/useContext';
 
 function App() {
   return (
     <div>
+      <AuthProvider>
       <Router>
         <Header></Header>
         <Switch>
@@ -21,6 +23,7 @@ function App() {
           <Route path="/thumbsup" component={ThumbsUp}></Route>
         </Switch>
       </Router>
+      </AuthProvider>
     </div>
   );
 }
