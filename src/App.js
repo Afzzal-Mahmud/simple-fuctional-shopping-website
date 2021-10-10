@@ -7,6 +7,7 @@ import ThumbsUp from "../src/Components/Thumbsup/ThumbsUp"
 import LogIn from './LogIn/LogIn';
 import Register from './Components/Register/Register';
 import AuthProvider from './Context/useContext';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
           <Route path="/review" component={Review}></Route>
           <Route path="/login" component={LogIn}></Route>
           <Route path="/register" component={Register}></Route>
-          <Route path="/thumbsup" component={ThumbsUp}></Route>
+          <PrivateRoute path='/thumbsup'>
+            <ThumbsUp></ThumbsUp>
+          </PrivateRoute>
         </Switch>
       </Router>
       </AuthProvider>
