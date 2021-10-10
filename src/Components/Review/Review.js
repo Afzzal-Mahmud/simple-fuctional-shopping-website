@@ -22,7 +22,7 @@ function Review() {
         //also remove from local storage and go to ThumbsUp components
         setCart([])
         localStorage.removeItem('shopping-cart');
-        history.push("/thumbsup")
+        history.push("/shipping")
     }
 
     return (
@@ -42,7 +42,7 @@ function Review() {
                 <button 
                 style={{marginLeft:"70px"}} 
                 className="cart-btn"
-                onClick={placeOrder}>Place Order</button>
+                onClick={placeOrder}>Prosside to Order</button>
             </Cart>
         </div>
     </div>

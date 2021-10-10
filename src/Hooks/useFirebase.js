@@ -16,13 +16,8 @@ function useFirebase() {
     /* google signIn mathod */
 
     const signInUsigingGoogle = () =>{
-        signInWithPopup(auth,googleProvider)
-        .then(result => {
-            console.log(result.user)
-            setUser(result.user)
-        }).catch(err => {
-            setError(err.message)
-        })
+       return signInWithPopup(auth,googleProvider);
+        
     }
     /* user logOut mathod */
     const logOut = () =>{
@@ -47,8 +42,10 @@ function useFirebase() {
 
     return{
         user,
+        setUser,
         logOut,
         error,
+        setError,
         signInUsigingGoogle,
     }
 

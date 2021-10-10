@@ -8,6 +8,7 @@ import LogIn from './LogIn/LogIn';
 import Register from './Components/Register/Register';
 import AuthProvider from './Context/useContext';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Shipping from './Components/Shipping/Shipping';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           <Route path="/register" component={Register}></Route>
           <PrivateRoute path='/thumbsup'>
             <ThumbsUp></ThumbsUp>
+          </PrivateRoute>
+          <PrivateRoute path='/shipping'>
+            <Shipping></Shipping>
           </PrivateRoute>
         </Switch>
       </Router>
