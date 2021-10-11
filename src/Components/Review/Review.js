@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { removeFromDb } from "../../Data/localStorage";
 import getProduct from "../../Js/loadData";
 import useCart from "../../Js/useCart";
