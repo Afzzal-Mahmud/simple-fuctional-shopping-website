@@ -33,7 +33,7 @@ function Hero() {
     }
 
     useEffect(()=>{
-        fetch('../../../products.JSON')
+        fetch('../../../products.json')
         .then(Response => Response.json())
         .then(data => {
             setProducts(data);
